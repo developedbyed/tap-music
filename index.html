@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tap Music</title>
+    <link rel="stylesheet" href="circles.css">
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.core.min.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+       var keyData = {
+           a: {
+               color: 'red',
+               sound: new Howl({
+                   src: ['sounds/bubbles.mp3']
+               })
+           },
+           s: {
+            color: 'blue',
+            sound: new Howl({
+                src: ['sounds/clay.mp3']
+            })
+        },
+        d: {
+            color: 'purple',
+            sound: new Howl({
+                src: ['sounds/confetti.mp3']
+            })
+        },
+        f: {
+            color: 'green',
+            sound: new Howl({
+                src: ['sounds/corona.mp3']
+            })
+        },
+        g: {
+            color: 'green',
+            sound: new Howl({
+                src: ['sounds/dotted-spiral.mp3']
+            })
+        },
+        h: {
+            color: '#cc3300',
+            sound: new Howl({
+                src: ['sounds/flash-1.mp3']
+            })
+        },
+        j: {
+            color: '#cc6600',
+            sound: new Howl({
+                src: ['sounds/flash-2.mp3']
+            })
+        },
+        k: {
+            color: '#cc9966',
+            sound: new Howl({
+                src: ['sounds/flash-3.mp3']
+            })
+        },
+        l: {
+            color: '#669999',
+            sound: new Howl({
+                src: ['sounds/glimmer.mp3']
+            })
+        },
+        z: {
+            color: '#003333',
+            sound: new Howl({
+                src: ['sounds/moon.mp3']
+            })
+        },
+        x: {
+            color: '#fffbe7',
+            sound: new Howl({
+                src: ['sounds/pinwheel.mp3']
+            })
+        },
+        c: {
+            color: '#99ffc4',
+            sound: new Howl({
+                src: ['sounds/piston-1.mp3']
+            })
+        },
+        v: {
+            color: '#065a69',
+            sound: new Howl({
+                src: ['sounds/piston-2.mp3']
+            })
+        },
+        b: {
+            color: '#ffd0ce',
+            sound: new Howl({
+                src: ['sounds/piston-3.mp3']
+            })
+        },
+        n: {
+            color: '#ffffff',
+            sound: new Howl({
+                src: ['sounds/prism-1.mp3']
+            })
+        },
+        m: {
+            color: '#ffa3a3',
+            sound: new Howl({
+                src: ['sounds/prism-2.mp3']
+            })
+        },
+        q: {
+            color: '#ffd5a9',
+            sound: new Howl({
+                src: ['sounds/prism-3.mp3']
+            })
+        },
+        w: {
+            color: '#fbffb6',
+            sound: new Howl({
+                src: ['sounds/splits.mp3']
+            })
+        },
+        e: {
+            color: '#bcffb6',
+            sound: new Howl({
+                src: ['sounds/squiggle.mp3']
+            })
+        },
+        r: {
+            color: '#b4d7ff',
+            sound: new Howl({
+                src: ['sounds/strike.mp3']
+            })
+        },
+        t: {
+            color: '#1e6963',
+            sound: new Howl({
+                src: ['sounds/suspension.mp3']
+            })
+        },
+        y: {
+            color: '#c51f1f',
+            sound: new Howl({
+                src: ['sounds/timer.mp3']
+            })
+        },
+        u: {
+            color: '#d63810',
+            sound: new Howl({
+                src: ['sounds/ufo.mp3']
+            })
+        },
+        i: {
+            color: '#bfd645',
+            sound: new Howl({
+                src: ['sounds/wipe.mp3']
+            })
+        },
+        o: {
+            color: '#70bf15',
+            sound: new Howl({
+                src: ['sounds/veil.mp3']
+            })
+        },
+        p: {
+            color: '#bd0707',
+            sound: new Howl({
+                src: ['sounds/zig-zag.mp3']
+            })
+        }
+       }
+        
+          
+        var circles = [];
+        
+		function onKeyDown(event) {
+                
+            var title = document.getElementById('title');
+            title.style.display = "none";
+
+                if(keyData[event.key]){
+                    var maxPoint = new Point(view.size.width, view.size.height);
+                    var randomPoint = Point.random();
+                    var point = maxPoint * randomPoint;
+                    var newCircle = new Path.Circle(point, 300);
+                    newCircle.fillColor = keyData[event.key].color;
+                    keyData[event.key].sound.play();
+                    circles.push(newCircle);
+                } 
+              
+            }
+            
+
+        function onFrame(event){
+            
+            for(var i = 0; i < circles.length; i++){
+              circles[i].scale(0.9);
+              circles[i].fillColor.hue += 1;
+             
+            }
+          }
+      
+
+    </script>
+    
+    
+</head>
+<body>
+    <div class="container">
+        <canvas id="myCanvas" resize> </canvas>
+        <h1 id="title">Press a key to make sounds with your keyboard!</h1>
+    </div>
+</body>
+</html>
