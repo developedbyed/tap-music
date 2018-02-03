@@ -1,0 +1,332 @@
+/* REMOVING THE PADDING AND MARGIN */
+    *{
+        padding: 0;
+        margin: 0;
+    }
+/* SETTING UP THE WIDTH AND HEIGHT OF THE CLICKABLE SOUNDS */
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     
+}
+.title{
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+   
+}
+.title h2{
+    font-size: 16px;
+}
+.sound{
+    width: 165px;
+    height: 120px;
+    opacity: 0.3; 
+    z-index: 100;
+    
+}
+.sound1{
+    background-color: #DF0051; 
+}
+.sound2{
+    background-color: #174C00;
+}
+.sound3{
+    background-color: #007BBF;
+}
+.sound4{
+    background-color: #94009F;
+}
+.sound5{
+    background-color: #777DA7;
+}
+.sound6{
+    background-color: #D5573B;
+}
+.sound7{
+    background-color: #904E55;
+}
+.sound8{
+    background-color: #ECD444;
+}
+
+
+.circle{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    transform: translateX(-100px);
+    opacity: 0;
+   
+}
+
+#lines{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    stroke-dashoffset: 200px;
+    stroke-dasharray: 500px;
+    opacity: 0;
+
+}
+#cube{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+}
+#signal{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+}
+.signal1{
+    stroke-dasharray: 2216;
+    stroke-dashoffset: 2216;
+    opacity: 0;
+}
+
+#sign{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%; 
+    opacity: 0;
+}
+.sign-line{
+    stroke:#777DA7;
+    stroke-width:7;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+
+}
+#squiggle{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%; 
+  
+}
+.squiggle1{
+    stroke-dasharray: 867;
+    stroke-dashoffset: 867;
+    opacity: 0;
+}
+#star{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+}
+#sun{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    
+    opacity: 0;
+}
+.sun-path1{
+    fill:#ECD444;
+  
+}
+.sun-path2{
+   
+}
+
+@keyframes lines{
+    0%{
+        opacity: 0;
+   
+    }
+    50%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+       stroke-dasharray: 0px;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes circle{
+    0%{
+        opacity: 0;
+       
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+           transform: translateX(100px);
+         
+    }
+}
+@keyframes cube{
+    0%{
+        opacity: 0;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotateZ(360deg);
+        
+    }
+}
+@keyframes signal{
+    0%{
+        opacity: 0;
+    }
+    85%{
+        opacity: 1;
+        stroke-dashoffset:0;
+    }
+    100%{
+        opacity: 0;
+        
+        
+    }
+}
+@keyframes sign{
+    0%{
+        opacity: 0;
+   
+    }
+    50%{
+        opacity: 1;
+        stroke-dashoffset:0;
+    }
+    90%{
+        opacity: 1;
+      
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes squiggle{
+    0%{
+        opacity: 0;
+   
+    }
+    50%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+       stroke-dashoffset: 0px;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes star{
+    0%{
+        opacity: 0;
+        transform: translateX(0px);
+        transform: rotateX(0deg);
+   
+    }
+    25%{
+        transform: translateX(-20px);
+        transform: rotateZ(40deg);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(20px);
+        
+    }
+    75%{
+        transform: translateX(-20px);
+    }
+    90%{
+        
+        opacity: 1;
+       stroke-dasharray: 0px;
+    }
+    100%{
+        transform: translateX(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes sun{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: rotateZ(180deg);
+    }
+    100%{
+        opacity: 0;
+        transform: rotateZ(180deg);
+    }
+}
+@keyframes sun1{
+   0%{
+    transform: translateX(0px);
+   }
+   58%{
+    transform: translateX(0px);
+   }
+   
+   60%{
+       transform: translateX(20px);
+   }
+   100%{
+    transform: translateX(50px);
+   }
+}
+@keyframes sun2{
+    0%{
+        transform: translateX(0px);
+    }
+    58%{
+     transform: translateX(0px);
+    }
+    
+    60%{
+        transform: translateX(-20px);
+    }
+    100%{
+     transform: translateX(-50px);
+    }
+ }
+
+
+@media only screen and (min-width: 460px) {
+   
+    .sound{
+        width: 225px;
+        opacity: 0.5;
+    }
+    .title h1{
+        font-size: 45px;
+    }
+    .title h2{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 760px) {
+   .container{
+       flex-direction: column;
+   }
+}
