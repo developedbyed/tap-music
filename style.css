@@ -4,25 +4,30 @@
         margin: 0;
     }
 /* SETTING UP THE WIDTH AND HEIGHT OF THE CLICKABLE SOUNDS */
+.tap-music{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Poppins', sans-serif;
+}
 
 .container{
     display: flex;
-    min-height: 100vh;
-    align-content: flex-end;
     flex-wrap: wrap;
     justify-content: space-between;
      
 }
 .title{
-    position: fixed;
-    top: 30px;
-    width: 100%;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    
    
 }
 .title h2{
     font-size: 16px;
+}
+.developer{
+    display: none;
 }
 .sound{
     width: 165px;
@@ -326,7 +331,21 @@
 }
 
 @media only screen and (min-width: 760px) {
-   .container{
+
+    .container{
        flex-direction: column;
+    
    }
+   .title{
+    position: fixed;
+    top: 30px;
+    width: 100%;
+   }
+   .developer{
+       position: fixed;
+       right: 20px;
+       bottom: 5px;
+       font-family: 'Poppins', sans-serif;
+   }
+   
 }
